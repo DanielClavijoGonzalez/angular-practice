@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'course';
+  dataToChildFromParent = "This is for form-component from app-component"
+  message:string = ''
+
 }

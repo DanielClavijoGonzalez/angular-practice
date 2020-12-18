@@ -1,0 +1,48 @@
+<p>Email</p>
+<input #email type="text" name="" [value]="defaultName">
+<br><br>
+<button (click)="onSendForm(email.value)">Send Form</button>
+<br><br>
+<button (click)="onDefaultForm()">Set Default Form</button>
+<p>{{ status }}</p>
+
+<hr>
+
+<div *ngIf="displayPassword; then showPassword; else hidePassword">
+
+</div>
+
+<ng-template #showPassword>
+  <p>12345678</p>
+</ng-template>
+
+<ng-template #hidePassword>
+  <p>********</p>
+</ng-template>
+
+<hr>
+
+<div [ngSwitch]="lightStatus">
+  <div *ngSwitchCase="'GREEN'">GREEN</div>
+  <div *ngSwitchCase="'RED'">RED</div>
+  <div *ngSwitchCase="'YELLOW'">YELLOW</div>
+  <div *ngSwitchDefault>BROKEN</div>
+</div>
+
+<hr>
+
+<div *ngFor="let name of names">
+  <p>{{ name }}</p>
+</div>
+
+<hr>
+
+<p>{{ messageFromParent }}</p>
+
+<hr>
+
+<button (click)="onSendEvent()">Send event</button>
+
+<hr>
+
+<p>Error de http?: {{errorMessage}}</p>
