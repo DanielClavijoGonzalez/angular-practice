@@ -1,0 +1,8 @@
+<div *ngIf="_user.user">
+  <div>Nombre: {{ _user.user.nombres }}</div>
+  <div>Telefono: {{ _user.user.telefono }}</div>
+</div>
+<br><br>
+<label for="user">User:</label>
+<input type="text" id="user"><br><br>
+<button (click)="login()">Login</button>

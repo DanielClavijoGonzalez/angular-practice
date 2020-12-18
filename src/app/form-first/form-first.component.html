@@ -1,7 +1,7 @@
 <p>Email</p>
 <input #email type="text" name="" [value]="defaultName">
 <br><br>
-<button (click)="onSendForm(email.value)">Send Form</button>
+<button mat-raised-button color="primary" (click)="onSendForm(email.value)">Send Form</button>
 <br><br>
 <button (click)="onDefaultForm()">Set Default Form</button>
 <p>{{ status }}</p>
@@ -45,4 +45,24 @@
 
 <hr>
 
-<p>Error de http?: {{errorMessage}}</p>
+<p>Error de http?: {{ errorMessage }}</p>
+
+<hr>
+
+<button [disabled]="estado">Btn ng-disabled</button>
+<br><br>
+<button (click)="estado = !estado">Change status Btn</button>
+
+<hr>
+
+<input type="text" [ngModel]="titulo"><br><br>
+<input type="text" (ngModel)="titulo"><!-- se asigna a variable -->
+<h3>Título: {{ titulo }}</h3>
+<input type="text" [(ngModel)]="titulo"><br><br>
+<input type="text" [(ngModel)]="titulo" (ngModelChange)="log($event)">
+<br><br>
+<h3>Selección: {{ seleccion }}</h3>
+<select [(ngModel)]="seleccion">
+  <option value="Awa">Awa</option>
+  <option value="Coco">Coco</option>
+</select>

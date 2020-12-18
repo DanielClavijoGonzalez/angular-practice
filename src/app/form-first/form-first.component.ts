@@ -13,6 +13,9 @@ export class FormFirstComponent implements OnInit {
   displayPassword:boolean = false
   lightStatus:string = "RED"
   names: string[] = ['awa', 'awita', 'coco', 'maní']
+  estado: boolean = false
+  titulo: string = "awa"
+  seleccion: string = ""
 
   //@Input() parentDataToChild
   @Input('parentDataToChild') messageFromParent
@@ -44,6 +47,10 @@ export class FormFirstComponent implements OnInit {
 
   onSendEvent(){
     this.childEvent.emit('Sending event from child to parent')
+  }
+
+  log(titulo){
+    console.log(titulo);
   }
 
 }

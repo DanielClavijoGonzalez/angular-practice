@@ -7,3 +7,11 @@
 <hr>
 
 <app-form-first (childEvent)="message=$event" [parentDataToChild]="dataToChildFromParent"></app-form-first>
+
+<hr>
+
+<app-login></app-login>
+
+<hr>
+
+<app-usuario [data]="usuario" *ngFor="let usuario of usuarios"></app-usuario>
