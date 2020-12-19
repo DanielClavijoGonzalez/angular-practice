@@ -1,0 +1,17 @@
+<h2>Formulario básico RcFm</h2>
+<form [formGroup]="signupForm" (ngSubmit)="enviar(signupForm.value)">
+  <label>nombre</label>
+  <input formControlName="nombre" type="text"><br><br>
+  <label>usuario</label>
+  <input formControlName="usuario" type="text"><br><br>
+  <label>email</label>
+  <input formControlName="email" type="email"><br>
+  <div
+    *ngIf="signupForm.get('email').hasError('email') && signupForm.get('email').hasError('required') && signupForm.get('email').touched">
+    Introduce el email!
+  </div><br><br>
+  <label>clave</label>
+  <input formControlName="clave" type="password">
+  <br><br>
+  <button [disabled]="signupForm.invalid" type="submit">Registrar</button>
+</form>
